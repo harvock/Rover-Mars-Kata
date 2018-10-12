@@ -1,0 +1,89 @@
+// Rover Object Goes Here
+// ======================
+var rover = {
+  direction: "N",
+  x: 0,
+  y: 0,
+  travelLog:[]
+}
+// ======================
+
+
+function turnLeft(rover) {
+  if (rover.direction === "N"){
+    rover.direction = "W";
+  }
+  else if (rover.direction === "W"){
+    rover.direction = "S";
+  }
+  else if (rover.direction === "S"){
+    rover.direction = "E";
+  }
+  else {
+    rover.direction = "N";
+  } 
+  console.log("turnLeft was called!");
+  console.log(rover.direction);
+}
+
+function turnRight(rover) {
+  if (rover.direction === "N"){
+    rover.direction = "E";
+  }
+  else if (rover.direction === "E"){
+    rover.direction = "S";
+  }
+  else if (rover.direction === "S"){
+    rover.direction = "W";
+  }
+  else {
+    rover.direction = "N";
+  }
+  console.log("turnRight was called!");
+  console.log(rover.direction);
+}
+
+function moveForward(rover) {
+  if (rover.direction === "N"){
+    rover.y--;
+    console
+  }
+  else if (rover.direction === "E"){
+    rover.x++;
+  }
+  else if (rover.direction === "S"){
+    rover.y++;
+  }
+  else {
+    rover.x--;
+  }
+  console.log(rover);
+  console.log("moveForward was called");
+  console.log("x","y");
+}
+
+function commands (texto, rover) {
+  for (var i=0; i<texto.lenght; i++){
+    if (texto[i] === "l"){
+      moveLeft(rover);
+    }
+    else if (texto[i] === "r"){
+      moveRight(rover);
+    }
+    else {
+      moveForward(rover);    
+    }
+  }
+}
+
+function log (obj) {
+  obj.travelLog.push(obj.x, obj.y);
+}
+
+turnRight(rover);
+moveForward(rover)
+moveForward(rover)
+moveForward(rover)
+turnRight(rover)
+moveForward(rover)
+console.log()
